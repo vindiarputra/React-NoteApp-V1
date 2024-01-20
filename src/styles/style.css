@@ -1,0 +1,269 @@
+:root {
+  --primary: #bb86fc;
+  --primary-variant: #3700b3;
+  --secondary: #03dac6;
+  --background: #000000;
+  --surface: #121212;
+  --error: #cf6679;
+  --warning: #f39c12;
+  --on-background: #ffffff;
+  --on-background-grey: #c7c7c7;
+  --on-surface: #ffffff;
+}
+
+[data-theme="light"] {
+  --background: #dddddd;
+  --surface: #ffffff;
+  --on-background: #333333;
+  --on-background-grey: #6d6d6d;
+  --on-surface: #333333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.app-container {
+  color: var(--on-background);
+  background-color: var(--background);
+  min-height: 100vh;
+  transition: all ease-in-out 0.5s;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+}
+
+header a:nth-child(2) {
+  font-size: 1.875rem;
+}
+
+header h1 {
+  flex: 2;
+}
+
+.note-header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid var(--on-background);
+}
+
+header .navBar ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+header .navBar ul li {
+  margin: 0 0.5rem;
+  font-size: 1.875rem;
+}
+
+main {
+  display: flex;
+  margin: 0 auto;
+  padding: 2rem 0;
+  width: 90%;
+  max-width: 75rem;
+}
+
+main h2:nth-child(1) {
+  text-align: center;
+}
+
+.noteList {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0.5rem;
+}
+
+.noteList-empty {
+  margin-top: 2rem;
+  padding: 1rem 0.5rem;
+}
+
+.noteList-empty p {
+  text-align: center;
+  color: var(--on-background-grey);
+}
+
+.noteItem {
+  flex: 1 0 calc(33.33% - 1rem);
+  min-width: 15rem;
+  box-sizing: border-box;
+  padding: 1rem;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+  border: 1px solid var(--on-background);
+  border-top: 0.3125rem solid;
+  overflow: hidden;
+}
+
+[data-placeholder]:empty::before {
+  content: attr(data-placeholder);
+  color: var(--on-background-grey);
+}
+
+.noteItem-title {
+  margin: 0.25rem 0;
+}
+
+.noteItem-createdAt {
+  color: var(--on-background-grey);
+  font-size: 0.875rem;
+  margin: 0.25rem 0;
+}
+
+.noteItem-action {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.25rem 0 0.125rem;
+  gap: 0.625rem;
+  margin-top: auto;
+}
+
+.noteItem-body {
+  margin-top: 1rem;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.detail-page {
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 90%;
+}
+
+.noteDetail-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+}
+
+.homepage,
+.ArsipPage,
+.add-new-note {
+  width: 100%;
+}
+
+.homepage-action,
+.add-new-note-action,
+.editNote-action {
+  position: fixed;
+  display: flex;
+  gap: 1rem;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border: 0;
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 3.125rem;
+  background-color: var(--on-background);
+  color: var(--background);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.search-input,
+.noteTitle {
+  margin: 1rem 0;
+  font-family: "Inter", sans-serif;
+  background-color: transparent;
+  border: 1px solid var(--on-background);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  width: 50%;
+  color: var(--on-background);
+}
+
+.noteSection {
+  display: flex;
+  flex-direction: column;
+  height: 30rem;
+}
+
+.noteBody {
+  flex: 1;
+  margin: 1rem 0;
+  font-family: "Inter", sans-serif;
+  background-color: transparent;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  color: var(--on-background);
+  overflow-y: auto;
+}
+
+.search-bar input::placeholder,
+.noteHeader input::placeholder {
+  color: var(--on-background-grey);
+}
+
+.search-container {
+  text-align: center;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 50px;
+  margin: 0;
+}
+
+.error h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #ff5f52;
+
+  .error p {
+    font-size: 1.2em;
+    color: #aaa;
+  }
+}
+@media screen and (min-width: 650px) {
+  .noteDetail-title {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .noteDetail-title {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .noteDetail-title {
+    font-size: 5rem;
+  }
+  .noteDetail-body {
+    font-size: 1.2rem;
+  }
+}
